@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Hook1 } from './hooks/useState'
 
-function App() {
+export const App = () => {
+  // implcit type definition - when we dont define the type but program interprets it from the initialzed value. 
+  // let age = 0; 
+
+  // explicit type defnition - when we define it.
+  // let name: string;
+
+  // const calculateAge = (dob: Date): number => {
+  //   const d2 = new Date();
+  //   var diff = d2.getTime() - dob.getTime();
+  //   return Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+  // }
+
+  // age = calculateAge(new Date(1978, 10, 3))
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container py-5'>
+      <Hook1 />
     </div>
-  );
+  )
 }
-
-export default App;
