@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const Hook1 = () => {
+export const Hook1: React.FC = () => {
     // this is hook.
     // first value - is variable name | second value is setter function that sets the variable.
     // argument passed to useState is default value.

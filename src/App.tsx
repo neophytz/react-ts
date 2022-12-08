@@ -1,4 +1,6 @@
 import React from 'react'
+import { Header } from './components/header'
+import { Hook2 } from './hooks/useEffect'
 import { Hook1 } from './hooks/useState'
 
 export const App = () => {
@@ -18,7 +20,11 @@ export const App = () => {
 
   return (
     <div className='container py-5'>
-      <Hook1 />
+      <Header />
+      {/* <div className='my-5'>
+        <Hook1 />
+      </div> */}
+      <Hook2 />
     </div>
   )
 }
