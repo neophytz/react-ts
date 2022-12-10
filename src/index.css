@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  /* background-color: #202020; */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +11,21 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.todo_marker {
+  height: 35px;
+  width: 35px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rounded-lg {
+  border-radius: 1em;
+}
+
+.pointer {
+  cursor: pointer;
 }

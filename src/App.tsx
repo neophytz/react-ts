@@ -1,7 +1,8 @@
 import React from 'react'
-import { Header } from './components/header'
-import { Hook2 } from './hooks/useEffect'
-import { Hook1 } from './hooks/useState'
+import { TodosView } from './views/todos.view'
+// import { Header } from './components/header'
+// import { Hook2 } from './hooks/useEffect'
+// import { Hook1 } from './hooks/useState'
 
 export const App = () => {
   // implcit type definition - when we dont define the type but program interprets it from the initialzed value. 
@@ -20,11 +21,12 @@ export const App = () => {
 
   return (
     <div className='container py-5'>
-      <Header />
+      {/* <Header /> */}
       {/* <div className='my-5'>
         <Hook1 />
       </div> */}
-      <Hook2 />
+      {/* <Hook2 /> */}
+      <TodosView />
     </div>
   )
 }
