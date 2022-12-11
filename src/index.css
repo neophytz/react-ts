@@ -14,8 +14,8 @@ code {
 }
 
 .todo_marker {
-  height: 35px;
-  width: 35px;
+  min-height: 35px;
+  min-width: 35px;
   font-size: 22px;
   display: flex;
   align-items: center;

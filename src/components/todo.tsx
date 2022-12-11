@@ -1,25 +1,19 @@
 import React from 'react'
+import { TodoProps } from '../types/app.types'
 import { RenderIf } from '../util/RenderIf'
 
-export interface ITodo {
-    userId?: number,
-    id?: number,
-    title: string,
-    completed: boolean
-}
-
-export const Todo: React.FC<ITodo> = ({completed, title, userId}) => {
+export const Todo: React.FC<TodoProps> = ({completed, title, userId, userClicked}) => {
   return (
     <div className='rounded-lg d-flex align-items-center justify-content-between p-2 py-3 mb-4 shadow bg-white'>
         <div className='d-flex align-items-center'>
-            <div className='bg-primary p-2 mx-3 rounded-circle'></div>
+            <div className={`p-2 mx-3 rounded-circle ${completed ? 'bg-success' : 'bg-primary'}`}></div>
             <div className='lead'>{title}</div>
         </div>
         <div className='d-flex align-items-center'>
             <div>8:00 am</div>
 
             <RenderIf condition={!!userId} component={
-                <div className='mx-3 bg-light rounded pointer text-muted todo_marker' style={{fontSize: 28}}>
+                <div onClick={() => userClicked(userId)} className='mx-3 bg-light rounded pointer text-muted todo_marker' style={{fontSize: 28}}>
                     <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                         <path fill="none" d="M12,8c-1.178,0-2,0.822-2,2s0.822,2,2,2s2-0.822,2-2S13.178,8,12,8z"></path>
                         <path fill="none" d="M12,4c-4.337,0-8,3.663-8,8c0,2.176,0.923,4.182,2.39,5.641c0.757-1.8,2.538-3.068,4.61-3.068h2 c2.072,0,3.854,1.269,4.61,3.068C19.077,16.182,20,14.176,20,12C20,7.663,16.337,4,12,4z M12,14c-2.28,0-4-1.72-4-4s1.72-4,4-4 s4,1.72,4,4S14.28,14,12,14z"></path>
