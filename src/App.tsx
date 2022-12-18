@@ -1,5 +1,8 @@
 import React from 'react'
-import { TodosView } from './views/todos.view'
+import { Hook2 } from './hooks/useEffect'
+import { Hook3 } from './hooks/useMemo'
+// import { Hook1 } from './hooks/useState'
+// import { TodosView } from './views/todos.view'
 // import { Header } from './components/header'
 // import { Hook2 } from './hooks/useEffect'
 // import { Hook1 } from './hooks/useState'
@@ -22,11 +25,12 @@ export const App = () => {
   return (
     <div className='container py-5'>
       {/* <Header /> */}
-      {/* <div className='my-5'>
-        <Hook1 />
-      </div> */}
+      <div className='my-5'>
+        {/* <Hook1 /> */}
+      </div>
       {/* <Hook2 /> */}
-      <TodosView />
+      <Hook3 />
+      {/* <TodosView /> */}
     </div>
   )
 }

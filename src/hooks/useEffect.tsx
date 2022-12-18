@@ -13,13 +13,14 @@ export const Hook2 = () => {
 
     // ! ALWAYS GIVEN DEPENDECNY ARRAY, EVEN IF IT'S EMPTY.
     /*
-    first argument - call back function!!
-    second argument is dependency array.!!
+      first argument - call back function!!
+      second argument is dependency array.!!
     */
 
     useEffect(() => {
         console.log('[ANNOUCEMENT] - Aaj mei krke aaya');
     }, [masti])
+
     // when any value in depedency array is changed, then callback is fired.
     // when value of 'msti' is being changed then callback is fired.
 
@@ -31,15 +32,45 @@ export const Hook2 = () => {
 
     // when we want to make an API call, after the component is initialized.
 
+    // birth
+    //   -> function call kreai
+    // change - wait...
+    //   -> function call krni h
+    // death
+    //   -> function call krni...
+
+    // in these cases we use useEffect.
+    // useEffect(() => {
+    //   // birth ka action
+    //   console.log('birth ka action.')
+    
+    //   return () => {
+    //       // death ka action.
+    //       // unmount p fire hoga.
+    //       console.log('death ka action.')
+    //   }
+    // }, [masti])
+      
+
+    // useLayoutEffect(() => {
+    //     console.log('[layout effect] - birth ka action.')
+    
+    //     return () => {
+    //         console.log('[layout effect] - death ka action.')
+    //     };
+
+    // }, [masti])
+
+
     const apiCall = async () => {
         const res = await axios.get("https://jsonplaceholder.typicode.com/comments")
         setData(res.data[0].email)
         console.log('data print done...', res.data)
     }
 
-      useEffect(() => {
-        apiCall()
-      }, []);
+    useEffect(() => {
+      apiCall()
+    }, []);
 
     return (
         <div>
