@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import axios from "axios";
 
 export const Hook2 = () => {
@@ -40,26 +40,25 @@ export const Hook2 = () => {
     //   -> function call krni...
 
     // in these cases we use useEffect.
-    // useEffect(() => {
-    //   // birth ka action
-    //   console.log('birth ka action.')
+    useEffect(() => {
+      // birth ka action
+      console.log('birth ka action.')
     
-    //   return () => {
-    //       // death ka action.
-    //       // unmount p fire hoga.
-    //       console.log('death ka action.')
-    //   }
-    // }, [masti])
-      
+      return () => {
+          // death ka action.
+          // unmount p fire hoga.
+          console.log('death ka action.')
+      }
+    }, [masti])
 
-    // useLayoutEffect(() => {
-    //     console.log('[layout effect] - birth ka action.')
+    useLayoutEffect(() => {
+        console.log('[layout effect] - birth ka action.')
     
-    //     return () => {
-    //         console.log('[layout effect] - death ka action.')
-    //     };
+        return () => {
+            console.log('[layout effect] - death ka action.')
+        };
 
-    // }, [masti])
+    }, [masti])
 
 
     const apiCall = async () => {

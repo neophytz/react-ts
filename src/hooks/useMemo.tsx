@@ -1,12 +1,20 @@
-import { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, memo } from "react";
 
-export const Hook3 = () => {
+const Hook3 = (): JSX.Element => {
     const [count, setCount] = useState(0);
     const [music, setMusic] = useState("gana")
     // this value will always get re-initialized when the component re-renders.
     // const calculation = expensiveCalculation(count)
     const calculation = useMemo(() => expensiveCalculation(count), [count]);
 
+    useEffect(() => {
+      console.log('birth - Something happened')
+    
+      return () => {
+        console.log('death - Something happeded')
+      }
+    }, [music])
+    
     // this is what happnes behind the scenes in case of use memo.
     // const [_calculation, setCalculation] = useState(0)
     // useEffect(() => {
@@ -34,8 +42,10 @@ export const Hook3 = () => {
 
 const expensiveCalculation = (num: number) => {
     console.log("Calculating...");
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < 10000; i++) {
         num += 1;
     }
     return num;
 };
+
+export default memo(Hook3)
