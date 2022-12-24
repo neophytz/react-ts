@@ -1,6 +1,7 @@
 import React from 'react'
-import { Hook2 } from './hooks/useEffect'
-import Hook3 from './hooks/useMemo'
+import { AdvanceUseEffect } from './hooks/advanceUseEffect'
+// import { Hook2 } from './hooks/useEffect'
+// import Hook3 from './hooks/useMemo'
 // import { Hook1 } from './hooks/useState'
 // import { TodosView } from './views/todos.view'
 // import { Header } from './components/header'
@@ -29,7 +30,8 @@ export const App = () => {
         {/* <Hook1 /> */}
       </div>
       {/* <Hook2 /> */}
-      <Hook3 />
+      {/* <Hook3 /> */}
+      <AdvanceUseEffect />
       {/* <TodosView /> */}
     </div>
   )
