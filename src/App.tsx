@@ -1,5 +1,9 @@
 import React from 'react'
-import { AdvanceUseEffect } from './hooks/advanceUseEffect'
+import { BrowserRouter } from 'react-router-dom'
+import { Header } from './components/header'
+import { AppRoutes } from './routes'
+
+// import { AdvanceUseEffect } from './hooks/advanceUseEffect'
 // import { Hook2 } from './hooks/useEffect'
 // import Hook3 from './hooks/useMemo'
 // import { Hook1 } from './hooks/useState'
@@ -24,15 +28,23 @@ export const App = () => {
   // age = calculateAge(new Date(1978, 10, 3))
 
   return (
-    <div className='container py-5'>
-      {/* <Header /> */}
-      <div className='my-5'>
-        {/* <Hook1 /> */}
-      </div>
-      {/* <Hook2 /> */}
-      {/* <Hook3 /> */}
-      <AdvanceUseEffect />
-      {/* <TodosView /> */}
+
+    // <div className='container py-5'>
+    //   {/* <Header /> */}
+    //   <div className='my-5'>
+    //     {/* <Hook1 /> */}
+    //   </div>
+    //   {/* <Hook2 /> */}
+    //   {/* <Hook3 /> */}
+    //   <AdvanceUseEffect />
+    //   {/* <TodosView /> */}
+    // </div>
+
+    <div>
+      <BrowserRouter>
+        <Header />
+        <AppRoutes />
+      </BrowserRouter>
     </div>
   )
 }

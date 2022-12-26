@@ -1,0 +1,7 @@
+export * from './about.view'
+export * from './home.view'
+export * from './blog.view'
+export * from './singup.view'
+export * from './login.view'
+export * from './contact.view'
+export * from './todos.view'
