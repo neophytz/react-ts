@@ -1,9 +1,12 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+
+import { Link, useNavigate } from 'react-router-dom'
 
 export const Logo = () => {
     return (
-        <h5 className='my-0 mx-3 p-0'>YTS</h5>
+        <Link to='/' className='text-decoration-none'>
+            <h5 className='my-0 mx-3 p-0'>LOGO</h5>
+        </Link>
     )
 }
 
