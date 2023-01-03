@@ -1,6 +1,6 @@
-import React from 'react'
-
+import React, { Suspense } from 'react'
 import { Route, useRoutes, Routes } from "react-router-dom";
+
 import { About, Blog, Contact, Home, Login, Signup, TodosView } from './views'
 
 const _Routes = () => {
@@ -16,7 +16,6 @@ const _Routes = () => {
     return _routes;
 };
 
-  
 export const AppRoutes = () => {
 
     return (

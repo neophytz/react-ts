@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { Header } from './components/header'
 import { AppRoutes } from './routes'
@@ -43,7 +43,9 @@ export const App = () => {
     <div>
       <BrowserRouter>
         <Header />
-        <AppRoutes />
+        <Suspense fallback={<div>loading..</div>}>
+          <AppRoutes />
+        </Suspense>
       </BrowserRouter>
     </div>
   )

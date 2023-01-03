@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import { ITodo, IUser } from '../types/app.types'
 import { RenderIf } from '../util/RenderIf'
 import axios from 'axios'
 import { Todo } from '../components/todo';
-import { Navigate } from 'react-router-dom';
 
 const TODOS_URL = "https://jsonplaceholder.typicode.com/todos";
 const USER_URL = "https://jsonplaceholder.typicode.com/users"
 
-export const TodosView = () => {
+const TodosView = () => {
 
   const [todos, setTodos] = useState<ITodo[]>([])
   const [currentUser, setCurrentUser] = useState<IUser | null>(null);
@@ -96,3 +95,5 @@ export const TodosView = () => {
     </div>
   )
 }
+
+export default memo(TodosView);
